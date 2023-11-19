@@ -1,0 +1,13 @@
+<% for(var i = 1; i <= result.Count; i++) { %>
+    <tr>
+        <td><%= i %></td>
+        <td><%= result.Items[i].level_1 %></td>
+        <td><%= result.Items[i].message %></td>
+        <td><%= result.Items[i].resourceId %></td>
+        <td><%= result.Items[i].timestamp %></td>
+        <td><%= result.Items[i].traceId%></td>
+        <td><%= result.Items[i].spanId%></td>
+        <td><%= result.Items[i].commit%></td>
+        <td><%= result.Items[i].metadata%></td>
+    </tr>
+<% } %>

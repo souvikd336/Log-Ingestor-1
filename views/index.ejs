@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title</title>
+    <link rel="stylesheet" href="./css/style.css">
+<body>
+    <!--Header--> 
+    <header id="header">
+        <nav>
+            <div class="container">
+                <div class="text-center">
+                    <a href="/" class="nav-brand text-dark">Log Records</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!--/Header-->
+    <!--form handling--> 
+    <form action="/" method="">
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th>SL.</th>
+                    <th>level</th>
+                    <th>message</th>
+                    <th>resourceId</th>
+                    <th>timestamp</th>
+                    <th>traceId</th>
+                    <th>spanId</th>
+                    <th>commit</th>
+                    <th>metadata</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% console.log(result.Items);
+                const dataa = result.Items;
+                console.log(dataa[1]);
+                %>
+                <% for(let i = 1; i <= dataa.length; i++) { %>
+                    <tr>
+                        <td><%= i %></td>
+                        <td><% var data = dataa[i] %><%= data.level_1 %></td>
+                        <td><%- data.message %></td>
+                        <td><%- data.resourceId %></td>
+                        <td><%- data.timestamp %></td>
+                        <td><%- data.traceId%></td>
+                        <td><%- data.spanId%></td>
+                        <td><%- data.commit%></td>
+                        <td><%- data.metadata%></td>
+                    </tr>
+                <% } %>
+            </tbody>
+        </table>
+    </form>
+    <!--/form handling-->
+</body>
+</html>
